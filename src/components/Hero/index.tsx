@@ -13,10 +13,10 @@ function Hero() {
         </p>
 
         <div className="mt-8 flex items-center justify-center gap-4">
-          <button className="rounded-xl bg-blue-600 px-6 py-4 text-base font-semibold text-white hover:bg-blue-700 sm:text-lg">
+          <button className="rounded-xl bg-blue-600 px-4 py-4 md:px-7 text-base font-semibold text-white hover:bg-blue-700 sm:text-lg">
             Get Started
           </button>
-          <button className="rounded-xl border border-gray-300 px-6 py-4 text-base font-semibold text-gray-500 hover:bg-gray-50 sm:text-lg">
+          <button className="rounded-xl border border-gray-300 px-4 py-4 md:px-7 text-base font-semibold text-gray-500 hover:bg-gray-50 sm:text-lg">
             Watch Demo
           </button>
         </div>

@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@utility grid-auto-fill {
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(80px, 15vw, 120px), 1fr)
+  );
+}
