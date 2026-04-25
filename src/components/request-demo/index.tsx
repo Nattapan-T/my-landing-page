@@ -4,7 +4,7 @@ function RequestDemo() {
   const [isDemoRequested, setIsDemoRequested] = useState(false);
 
   return (
-    <section className="mt-24">
+    <section className="mt-24 px-6 md:px-14">
       <div className="mx-auto max-w-4xl text-center flex flex-col gap-3">
         <h2 className="text-3xl font-semibold text-gray-900">
           Create Your First Personalized

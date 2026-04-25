@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="mt-24 md:mt-40">
+    <section className="mt-24 md:mt-40 px-6 ">
       <div className="mx-auto max-w-4xl text-center">
         <h1 className="text-4xl font-semibold leading-tight text-gray-900 md:text-5xl">
           Make Your First <span className="text-blue-600">Impression</span>{" "}

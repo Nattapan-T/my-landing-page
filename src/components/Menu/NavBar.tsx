@@ -26,7 +26,7 @@ function NavBar() {
           <img src={logo} alt="Logo" className="h-14 w-auto" />
         </div>
 
-        <ul className="hidden justify-center gap-16 text-lg  text-gray-500 md:flex">
+        <ul className="hidden justify-center gap-3 lg:gap-14 text-lg text-gray-500 md:flex">
           <li className="cursor-pointer hover:text-blue-600">Home</li>
           <li className="cursor-pointer hover:text-blue-600">Product</li>
           <li className="cursor-pointer hover:text-blue-600">Feature</li>

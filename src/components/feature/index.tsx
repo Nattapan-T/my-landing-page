@@ -27,13 +27,13 @@ const featureItems = [
 
 function Feature() {
   return (
-    <section className="mt-24">
+    <section className="mt-24 px-6 md:px-14">
       <div className="mx-auto max-w-4xl text-center">
         <p className="text-sm text-blue-500 mb-2">Features</p>
         <h2 className="text-3xl font-semibold text-gray-900">
           You will never missed a deadline
         </h2>
-        <p className="mx-auto mt-4 max-w-sm leading-relaxed text-gray-400 text-sm">
+        <p className="mx-auto mt-4 max-w-sm leading-relaxed text-gray-400 text-base">
           Connect expose and visualize and over 150 Sass tools without
           engineering method
         </p>
