@@ -12,7 +12,7 @@ function App() {
       <Menu />
       <main className="flex-1 px-6 md:px-14">
         <Hero />
-        <section className="mt-8 mb-16 md:mt-28">
+        <section className="mt-10 md:mt-16">
           <div className="mx-auto max-w-4xl">
             <img
               className="w-full h-auto shadow-sm ring-1 ring-gray-200"

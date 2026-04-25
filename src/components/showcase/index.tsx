@@ -49,7 +49,7 @@ function Showcase() {
   const desktopList = [...showcaseItems, ...showcaseItems.toReversed()];
 
   return (
-    <section className="mt-28">
+    <section className="mt-24 mb-24">
       <div className="mx-auto mt-16 max-w-4xl">
         <div className="grid grid-cols-1 gap-y-14 md:hidden">
           {mobileList.map((item, i) => (

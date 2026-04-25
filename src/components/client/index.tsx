@@ -8,12 +8,12 @@ const logos = [AmazonLogo, CocaColaLogo, FedExLogo, IBMLogo, WalmartLogo];
 
 function Client() {
   return (
-    <section className="py-10">
-      <h3 className="text-md font-normal text-gray-400 text-center mb-8">
+    <section className="mt-24">
+      <h3 className="text-sm font-normal text-gray-400 text-center mb-10">
         Already loved and trusted by product team
       </h3>
 
-      <div className="grid grid-auto-fill gap-x-10 gap-y-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-auto-fill gap-x-10 gap-y-8 max-w-4xl mx-auto">
         {[...logos, ...logos].map((logo, i) => (
           <img
             key={i}
