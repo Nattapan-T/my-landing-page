@@ -1,4 +1,8 @@
 function Hero() {
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="hero" className="mt-24 md:mt-40 px-6 scroll-mt-24">
       <div className="mx-auto max-w-4xl text-center">
@@ -11,10 +15,16 @@ function Hero() {
           retain more users
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <button className="rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white hover:bg-blue-700">
+          <button
+            onClick={() => scrollTo("request-demo")}
+            className="rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white hover:bg-blue-700"
+          >
             Get Started
           </button>
-          <button className="rounded-xl border border-gray-300 px-6 py-3 text-base font-semibold text-gray-500 hover:bg-gray-50">
+          <button
+            onClick={() => scrollTo("showcase")}
+            className="rounded-xl border border-gray-300 px-6 py-3 text-base font-semibold text-gray-500 hover:bg-gray-50"
+          >
             Watch Demo
           </button>
         </div>

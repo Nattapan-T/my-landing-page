@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { navItems } from "./navItems";
+import AuthModal from "./auth-modal";
 
 function DropdownMenu({
   isOpen,
@@ -7,6 +9,8 @@ function DropdownMenu({
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
 }) {
+  const [authMode, setAuthMode] = useState<"signin" | "signup" | null>(null);
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
@@ -16,7 +20,7 @@ function DropdownMenu({
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-gray-100 transition-colors z-50"
+        className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-gray-100 transition-colors z-20"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,15 +59,35 @@ function DropdownMenu({
           </ul>
 
           <div className="flex flex-col gap-4 text-lg">
-            <button className="w-full rounded-md border px-4 py-3 border-gray-300 text-gray-500 hover:bg-gray-50">
+            <button
+              onClick={() => {
+                setAuthMode("signin");
+                setIsOpen(false);
+              }}
+              className="w-full rounded-md border px-4 py-3 border-gray-300 text-gray-500 hover:bg-gray-50"
+            >
               Sign in
             </button>
-            <button className="w-full rounded-md bg-blue-600 px-4 py-3 text-white hover:bg-blue-700">
+            <button
+              onClick={() => {
+                setAuthMode("signup");
+                setIsOpen(false);
+              }}
+              className="w-full rounded-md bg-blue-600 px-4 py-3 text-white hover:bg-blue-700"
+            >
               Sign up free
             </button>
           </div>
         </div>
       </div>
+
+      <AuthModal
+        mode={authMode}
+        onClose={() => setAuthMode(null)}
+        onSwitch={() =>
+          setAuthMode(authMode === "signin" ? "signup" : "signin")
+        }
+      />
     </>
   );
 }

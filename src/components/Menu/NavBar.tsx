@@ -1,56 +1,69 @@
 import { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { navItems } from "./navItems";
+import AuthModal from "./auth-modal";
 
 function NavBar() {
   const [scrolled, setScrolled] = useState(false);
+  const [authMode, setAuthMode] = useState<"signin" | "signup" | null>(null);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 80);
-
     window.addEventListener("scroll", handler);
     handler();
-
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 z-50 w-full hidden md:block transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 shadow-md backdrop-blur border-b border-gray-100"
-          : "bg-transparent border-b border-gray-200"
-      }`}
-    >
-      <div className="mx-auto grid max-w-7xl grid-cols-3 items-center px-6 py-4">
-        <img src={logo} alt="Logo" className="h-14 w-auto" />
-
-        <ul className="hidden justify-center gap-3 lg:gap-14 text-lg text-gray-500 md:flex">
-          {navItems.map((item) => (
-            <li
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className="cursor-pointer hover:text-blue-600 transition-colors"
+    <>
+      <nav
+        className={`fixed top-0 left-0 z-10 w-full hidden md:block transition-all duration-300 ${
+          scrolled
+            ? "bg-white/95 shadow-md backdrop-blur border-b border-gray-100"
+            : "bg-transparent border-b border-gray-200"
+        }`}
+      >
+        <div className="mx-auto grid max-w-7xl grid-cols-3 items-center px-6 py-4">
+          <img src={logo} alt="Logo" className="h-14 w-auto" />
+          <ul className="hidden justify-center gap-3 lg:gap-14 text-lg text-gray-500 md:flex">
+            {navItems.map((item) => (
+              <li
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
+                className="cursor-pointer hover:text-blue-600 transition-colors"
+              >
+                {item.label}
+              </li>
+            ))}
+          </ul>
+          <div className="flex justify-end gap-3">
+            <button
+              onClick={() => setAuthMode("signin")}
+              className="rounded-md border border-gray-300 px-4 py-2 text-gray-500 hover:bg-gray-50"
             >
-              {item.label}
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex justify-end gap-3">
-          <button className="rounded-md border border-gray-300 px-4 py-2 text-gray-500 hover:bg-gray-50">
-            Sign in
-          </button>
-          <button className="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
-            Sign up free
-          </button>
+              Sign in
+            </button>
+            <button
+              onClick={() => setAuthMode("signup")}
+              className="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+            >
+              Sign up free
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      <AuthModal
+        mode={authMode}
+        onClose={() => setAuthMode(null)}
+        onSwitch={() =>
+          setAuthMode(authMode === "signin" ? "signup" : "signin")
+        }
+      />
+    </>
   );
 }
 

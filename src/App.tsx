@@ -1,5 +1,5 @@
-import Hero from "./components/hero";
 import Menu from "./components/menu";
+import Hero from "./components/hero";
 import Client from "./components/client";
 import Feature from "./components/feature";
 import RequestDemo from "./components/request-demo";

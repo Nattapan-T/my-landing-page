@@ -15,7 +15,9 @@ function ShowcaseCard({
   textTop?: boolean;
 }) {
   return (
-    <div className={`flex flex-col ${textTop ? "" : "md:flex-col-reverse"}`}>
+    <div
+      className={`flex flex-col ${textTop ? "" : "md:flex-col-reverse"} transition-transform duration-300 ease-in-out hover:scale-110`}
+    >
       <div className="py-8 text-center md:text-start">
         <h3 className="text-xl font-semibold text-gray-900 mb-3 mx-auto md:mx-0">
           {item.title}

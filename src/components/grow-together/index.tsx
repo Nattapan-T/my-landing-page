@@ -1,6 +1,10 @@
 import growTogetherImage from "../../assets/grow-together.png";
 
 function GrowTogether() {
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       id="grow-together"
@@ -15,7 +19,10 @@ function GrowTogether() {
           card required. Post jobs get candidates and manage applicants all in
           one place.
         </p>
-        <button className="rounded-xl bg-blue-600 px-10 py-4 text-base font-semibold text-white hover:bg-blue-700">
+        <button
+          onClick={() => scrollTo("request-demo")}
+          className="rounded-xl bg-blue-600 px-10 py-4 text-base font-semibold text-white hover:bg-blue-700"
+        >
           Try it for free
         </button>
       </div>
