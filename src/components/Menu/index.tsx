@@ -4,10 +4,10 @@ import MobileMenu from "./MobileMenu";
 function Menu() {
   return (
     <>
-      <div className="hidden md:block">
+      <div id="menu" className="hidden md:block">
         <NavBar />
       </div>
-      <div className="block md:hidden">
+      <div id="mobile-menu" className="block md:hidden">
         <MobileMenu />
       </div>
     </>

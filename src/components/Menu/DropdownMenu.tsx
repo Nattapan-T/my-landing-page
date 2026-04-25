@@ -1,3 +1,5 @@
+import { navItems } from "./navItems";
+
 function DropdownMenu({
   isOpen,
   setIsOpen,
@@ -5,6 +7,11 @@ function DropdownMenu({
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
 }) {
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
+
   return (
     <>
       <button
@@ -17,9 +24,7 @@ function DropdownMenu({
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={`size-6 transition-all duration-300 ${
-            isOpen ? "rotate-90" : ""
-          }`}
+          className={`size-6 transition-all duration-300 ${isOpen ? "rotate-90" : ""}`}
         >
           {isOpen ? (
             <path d="M6 18 18 6M6 6l12 12" />
@@ -30,26 +35,23 @@ function DropdownMenu({
       </button>
 
       <div
-        className={`
-          fixed inset-0 z-10 md:hidden
-          bg-white transition-all duration-300
-          ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
-        `}
+        className={`fixed inset-0 z-10 md:hidden bg-white transition-all duration-300 ${
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
       >
         <div className="flex flex-col h-full pt-16 px-8 gap-20">
           <ul className="flex flex-col text-gray-600 text-lg">
-            <li className="py-4 border-b border-gray-300 cursor-pointer hover:text-blue-600">
-              Home
-            </li>
-            <li className="py-4 border-b border-gray-300 cursor-pointer hover:text-blue-600">
-              Product
-            </li>
-            <li className="py-4 border-b border-gray-300 cursor-pointer hover:text-blue-600">
-              Feature
-            </li>
-            <li className="py-4 border-b border-gray-300 cursor-pointer hover:text-blue-600">
-              Pricing
-            </li>
+            {navItems.map((item) => (
+              <li
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
+                className="py-4 border-b border-gray-300 cursor-pointer hover:text-blue-600 transition-colors"
+              >
+                {item.label}
+              </li>
+            ))}
           </ul>
 
           <div className="flex flex-col gap-4 text-lg">
@@ -65,4 +67,5 @@ function DropdownMenu({
     </>
   );
 }
+
 export default DropdownMenu;

@@ -23,7 +23,10 @@ const footerLinks = [
 
 function PreFooter() {
   return (
-    <section className="mt-24 px-6 md:px-14 border-t border-gray-100 pt-16">
+    <section
+      id="prefooter"
+      className="mt-24 px-6 md:px-14 border-t border-gray-100 pt-16"
+    >
       <div className="mx-auto max-w-6xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10">
         {footerLinks.map((col, i) => (
           <div key={i} className="flex flex-col gap-4">

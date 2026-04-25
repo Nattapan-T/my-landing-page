@@ -62,7 +62,10 @@ const faqs = [
 ];
 function FAQ() {
   return (
-    <section className="mt-28 px-6 md:px-14 flex flex-col items-center gap-5">
+    <section
+      id="faq"
+      className="mt-28 px-6 md:px-14 flex flex-col items-center gap-5"
+    >
       <h2 className="text-3xl md:text-4xl text-gray-900 text-center font-medium">
         Frequently asked questions
       </h2>

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @utility grid-auto-fill {
   grid-template-columns: repeat(
     auto-fill,
