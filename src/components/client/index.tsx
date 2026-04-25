@@ -8,7 +8,7 @@ const logos = [AmazonLogo, CocaColaLogo, FedExLogo, IBMLogo, WalmartLogo];
 
 function Client() {
   return (
-    <section className="px-6 py-10">
+    <section className="py-10">
       <h3 className="text-md font-normal text-gray-400 text-center mb-8">
         Already loved and trusted by product team
       </h3>

@@ -1,16 +1,18 @@
 import Hero from "./components/hero";
 import Menu from "./components/menu";
 import Client from "./components/client";
-import chartImage from "./assets/77bed93c22cc94457124aff6df696718c0c77f3c.png";
 import Feature from "./components/feature";
+import RequestDemo from "./components/request-demo";
+import Showcase from "./components/showcase";
+import chartImage from "./assets/77bed93c22cc94457124aff6df696718c0c77f3c.png";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col pb-20 ">
+    <div className="min-h-screen flex flex-col">
       <Menu />
       <main className="flex-1 px-6 md:px-14">
         <Hero />
-        <section className="pb-16 pt-8 md:px-10 md:pb-24 md:pt-12">
+        <section className="mt-8 mb-16 md:mt-28">
           <div className="mx-auto max-w-4xl">
             <img
               className="w-full h-auto shadow-sm ring-1 ring-gray-200"
@@ -21,6 +23,8 @@ function App() {
         </section>
         <Client />
         <Feature />
+        <RequestDemo />
+        <Showcase />
       </main>
     </div>
   );

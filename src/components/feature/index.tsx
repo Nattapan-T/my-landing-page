@@ -27,7 +27,7 @@ const featureItems = [
 
 function Feature() {
   return (
-    <section className="px-6 mt-20">
+    <section className="mt-24">
       <div className="mx-auto max-w-4xl text-center">
         <p className="text-sm text-blue-500">feature</p>
         <h2 className="text-3xl font-semibold text-gray-900">
