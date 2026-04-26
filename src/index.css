@@ -4,9 +4,23 @@ html {
   scroll-behavior: smooth;
 }
 
-@utility grid-auto-fill {
+* {
+  cursor: default;
+}
+
+button,
+a,
+[role="button"],
+input,
+textarea,
+select,
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@utility grid-auto-fit {
   grid-template-columns: repeat(
-    auto-fill,
+    auto-fit,
     minmax(clamp(80px, 15vw, 120px), 1fr)
   );
 }

@@ -1,18 +1,18 @@
 import {
-  ChartBarIcon,
-  ChatBubbleLeftIcon,
+  ChartBarSquareIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
   CodeBracketIcon,
 } from "@heroicons/react/24/outline";
 
 const featureItems = [
   {
-    icon: ChartBarIcon,
+    icon: ChartBarSquareIcon,
     title: "Rich Analytics",
     description:
       "Easy data management with a dedicated admin panel and a developer platform to extend what Polio CRM can do.",
   },
   {
-    icon: ChatBubbleLeftIcon,
+    icon: ChatBubbleOvalLeftEllipsisIcon,
     title: "Rich Analytics",
     description:
       "Easy data management with a dedicated admin panel and a developer platform to extend what Polio CRM can do.",
@@ -43,8 +43,14 @@ function Feature() {
         {[...featureItems, ...featureItems].map((item, i) => {
           const Icon = item.icon;
           return (
-            <div key={i} className="flex flex-col items-center text-center">
-              <Icon className="h-8 w-8 text-blue-500 mb-4" strokeWidth={1.5} />
+            <div
+              key={i}
+              className="group flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:scale-110"
+            >
+              <Icon
+                className="h-8 w-8 text-blue-500 mb-4 transition-transform duration-300 ease-in-out group-hover:rotate-12 group-hover:scale-125"
+                strokeWidth={1.5}
+              />
               <h3 className="text-base font-semibold text-gray-900 mb-2">
                 {item.title}
               </h3>

@@ -13,7 +13,7 @@ function Client() {
         Already loved and trusted by product team
       </h3>
 
-      <div className="grid grid-cols-2 md:grid-auto-fill gap-x-10 gap-y-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-auto-fit gap-x-10 gap-y-8 max-w-4xl mx-auto">
         {[...logos, ...logos].map((logo, i) => (
           <img
             key={i}
