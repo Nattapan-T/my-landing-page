@@ -61,7 +61,11 @@ function RequestDemo() {
               <button
                 onClick={handleGetStarted}
                 disabled={state === "loading" || !isEmailInputValid}
-                className={`rounded-xl border border-gray-300 px-6 py-3 text-base font-semibold text-gray-500 hover:bg-gray-50 disabled:opacity-60 transition-all${isEmailInputValid ? "animate-pulse shadow-md backdrop-blur" : ""}`}
+                className={`rounded-xl border border-gray-300 px-6 py-3 text-base font-semibold text-gray-500 hover:bg-gray-50 disabled:opacity-60 transition-all ${
+                  isEmailInputValid
+                    ? "animate-pulse shadow-md backdrop-blur"
+                    : ""
+                }`}
               >
                 {state === "loading" ? "Loading..." : "Get Started"}
               </button>
